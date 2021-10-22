@@ -42,23 +42,9 @@ footer {
     background-image: url(../images/roger-erdvig-GPDqaWEsTxU-unsplash.jpg);
     background-size: cover;
     background-position: bottom;
+    color: white;
+    text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -98,3 +84,8 @@ footer {
     height: 2rem;
     border-radius: 20px;
 }
+
+
+
+
+
