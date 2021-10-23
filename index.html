@@ -20,35 +20,66 @@
     </header>
 
     <main>
-        <div class="grid-container fluid">
-            <!-- State Search Bar and results container -->
-            <div class="grid-x grid-margin-x">
-                <!--Search box -->
-                <form id="search-form" class="location-checker cell large-4">
-                    <h2> Park Search </h2>
-                    <p>Find a park near you</p>
-                    <input id="search-input" class="search-box" placeholder="Enter Location" type="text"></br>
-                    <button id="search-btn" class="search-btn" type="search-btn">Search</button>
-                </form>
+        <section>
+            <div class="grid-container fluid">
+                <!-- State Search Bar and results container -->
+                <div class="grid-x grid-margin-x">
+                    <!--Search box -->
+                    <form id="search-form" class="location-checker cell large-4">
+                        <h2> Park Search </h2>
+                        <p>Find a park near you</p>
+                        <input id="search-input" class="search-box" placeholder="Enter Location" type="text"></br>
+                        <button id="search-btn" class="search-btn" type="search-btn">Search</button>
+                    </form>
 
-                <div class="search-result cell large-8">
-                    <h2>Search Results</h2>
+                    <div class="search-result cell large-8">
+                        <h2>Search Results</h2>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
+        <section>
+            <div>
+                <h2 id="weather-forecast" class="text-center">Weather Forecast: <span id="location-name"></span></h2>
+                <div class="card-body">
+                    <button id="deleteSearches" class="button"> Delete </button>
+                    <div id="savedWeatherSearches">
+                    </div>
+                    <div class="row card">
+                        <div id="weather-container">
+                            <div class="card-divider text-center">
+                                <div class="dateForecast">
+                                    <div id="date1"></div>
+                                    <p id="day1"></p>
+                                </div>
+                                <div class="dateForecast">
+                                    <div id="date2"></div>
+                                    <p id="day2"></p>
+                                </div>
+                                <div class="dateForecast">
+                                    <div id="date3"></div>
+                                    <p id="day3"></p>
+                                </div>
+                                <div class="dateForecast">
+                                    <div id="date4"></div>
+                                    <p id="day4"></p>
+                                </div>
+                                <div class="dateForecast">
+                                    <div id="date5"></div>
+                                    <p id="day5"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+
+        <footer>
+            ©Copyright 2021, Nathan Nelson & JenMLucas. All Rights Reserved
+        </footer>
     </main>
-
-
-    <footer>
-        <p>test</p>
-    </footer>
-
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>

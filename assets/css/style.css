@@ -6,7 +6,6 @@
 
 
 
-
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -36,29 +35,14 @@ footer {
     width: 100%;
     padding: 40px 35px;
     background-color: green;
-    position: absolute;
     bottom: 0;
     height: 40px;
     background-image: url(../images/roger-erdvig-GPDqaWEsTxU-unsplash.jpg);
     background-size: cover;
     background-position: bottom;
+    color: white;
+    text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -97,4 +81,48 @@ footer {
     width: 30%;
     height: 2rem;
     border-radius: 20px;
+}
+
+
+
+
+/*forecast Display Starts */
+
+#weather-forecast{
+    color: rgb(15, 145, 32)
+}
+    
+#date1, #date2, #date3, #date4, #date5{
+text-decoration: underline;
+}
+
+.dateForecast {
+    margin-left: 80px;
+    justify-content: space-between;
+    font-size: 25px;  
+}
+
+.icon {
+    width: 60%;
+}
+
+.favorable {
+    background-color: green;
+}
+
+.moderate {
+    background-color: yellow;
+}
+
+.severe {
+    background-color: red;
+}
+
+.button{
+    margin-left: 10px;
+    border-radius: 12px;
+}
+
+#deleteSearches {
+    background-color: red;
 }
