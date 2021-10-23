@@ -20,57 +20,63 @@
     </header>
 
     <main>
-        <div class="grid-container fluid">
-            <!-- State Search Bar and results container -->
-            <div class="grid-x grid-margin-x">
-                <!--Search box -->
-                <form id="search-form" class="location-checker cell large-4">
-                    <h2> Park Search </h2>
-                    <p>Find a park near you</p>
-                    <input id="search-input" class="search-box" placeholder="Enter Location" type="text"></br>
-                    <button id="search-btn" class="search-btn" type="search-btn">Search</button>
-                </form>
+        <section>
+            <div class="grid-container fluid">
+                <!-- State Search Bar and results container -->
+                <div class="grid-x grid-margin-x">
+                    <!--Search box -->
+                    <form id="search-form" class="location-checker cell large-4">
+                        <h2> Park Search </h2>
+                        <p>Find a park near you</p>
+                        <input id="search-input" class="search-box" placeholder="Enter Location" type="text"></br>
+                        <button id="search-btn" class="search-btn" type="search-btn">Search</button>
+                    </form>
 
-                <div class="search-result cell large-8">
-                    <h2>Search Results</h2>
+                    <div class="search-result cell large-8">
+                        <h2>Search Results</h2>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <article>
-            <div class="small-block-grid-2">
-                <h2 id="forecast" class="text-center">Five Day Weather Forecast:</h2>
-                <div>
+        <section>
+            <div>
+                <h2 class="text-center">Weather Forecast:<span id="location-search"></span></h2>
+                <div id="savedWeatherSearches" class="card-body"></div>
+                <!-- <button id="deleteSearches">Delete Saved Searches</button> -->
+                <div class="row card">
                     <div id="weather-container">
-                        <div class="card-section">
-                            <div id="date1"></div>
+                        <div class="card-divider">
+                            <div class="dateForecast" id="date1"></div>
+                            <div class="dateForecast" id="date2"></div>
+                            <div class="dateForecast" id="date3"></div>
+                            <div class="dateForecast" id="date4"></div>
+                            <div class="dateForecast" id="date5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div>
+                <div class="row card">
+                    <div id="weather-container">
+                        <div id="forecast" class="card-divider text-center">
                             <p id="day1"></p>
-                            <div id="date2"></div>
                             <p id="day2"></p>
-                            <div id="date3"></div>
                             <p id="day3"></p>
-                            <div id="date4"></div>
                             <p id="day4"></p>
-                            <div id="date5"></div>
                             <p id="day5"></p>
                         </div>
                     </div>
                 </div>
-            </div>    
-        </article>
+            </div>
+        </section>
 
+        <footer>
+            ©Copyright 2021, Nathan Nelson, Devin Miles, & JenMLucas. All Rights Reserved
+        </footer>
     </main>
-
-
-    <footer>
-        ©Copyright 2021, Nathan Nelson, Devin Miles, & JenMLucas. All Rights Reserved
-    </footer>
-
-
-
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
         integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>

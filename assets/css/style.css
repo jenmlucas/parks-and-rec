@@ -6,7 +6,6 @@
 
 
 
-
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -36,7 +35,6 @@ footer {
     width: 100%;
     padding: 40px 35px;
     background-color: green;
-    position: absolute;
     bottom: 0;
     height: 40px;
     background-image: url(../images/roger-erdvig-GPDqaWEsTxU-unsplash.jpg);
@@ -88,4 +86,32 @@ footer {
 
 
 
+/*forecast Display Starts */
 
+#forecast{
+    justify-content: space-around; 
+}
+
+.dateForecast {
+    margin-left: 160px;
+    justify-content: space-between;
+    padding-right: 106px;
+    text-decoration: underline;
+    font-size: 20px;  
+}
+
+.icon {
+    width: 60%;
+}
+
+.favorable {
+    background-color: green;
+}
+
+.moderate {
+    background-color: yellow;
+}
+
+.severe {
+    background-color: red;
+}
