@@ -41,37 +41,40 @@
 
         <section>
             <div>
-                <h2 class="text-center">Weather Forecast:<span id="location-search"></span></h2>
-                <div id="savedWeatherSearches" class="card-body"></div>
-                <!-- <button id="deleteSearches">Delete Saved Searches</button> -->
-                <div class="row card">
-                    <div id="weather-container">
-                        <div class="card-divider">
-                            <div class="dateForecast" id="date1"></div>
-                            <div class="dateForecast" id="date2"></div>
-                            <div class="dateForecast" id="date3"></div>
-                            <div class="dateForecast" id="date4"></div>
-                            <div class="dateForecast" id="date5"></div>
+                <h2 id="weather-forecast" class="text-center">Weather Forecast: <span id="location-search"></span></h2>
+                <divclass="card-body">
+                    <div id="savedWeatherSearches">
+                        <button id="deleteSearches" class="button"> Delete</button>
+                    </div>
+                    <div class="row card">
+                        <div id="weather-container">
+                            <div class="card-divider text-center">
+                                <div class="dateForecast">
+                                    <div id="date1"></div>
+                                    <p id="day1"></p>
+                                </div>
+                                <div class="dateForecast">
+                                    <div id="date2"></div>
+                                    <p id="day2"></p>
+                                </div>
+                                <div class="dateForecast">
+                                    <div id="date3"></div>
+                                    <p id="day3"></p>
+                                </div>
+                                <div class="dateForecast">
+                                    <div id="date4"></div>
+                                    <p id="day4"></p>
+                                </div>
+                                <div class="dateForecast">
+                                    <div id="date5"></div>
+                                    <p id="day5"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
         </section>
-        <section>
-            <div>
-                <div class="row card">
-                    <div id="weather-container">
-                        <div id="forecast" class="card-divider text-center">
-                            <p id="day1"></p>
-                            <p id="day2"></p>
-                            <p id="day3"></p>
-                            <p id="day4"></p>
-                            <p id="day5"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <footer>
             ©Copyright 2021, Nathan Nelson, Devin Miles, & JenMLucas. All Rights Reserved

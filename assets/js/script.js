@@ -1,10 +1,9 @@
 var weatherContainer = document.getElementById("weather-container");
 var searchBtn = document.getElementById("search-btn");
 var locationWeatherInput = document.getElementById("search-input");
-// var searchResult= document.getElementById("location-search");
 var savedWeatherSearches = document.getElementById("savedWeatherSearches");
-// var searchContainer= document.getElementById("search-results-container");
-// var deleteEl = document.getElementById("deleteSearches");
+var deleteEl = document.getElementById("deleteSearches");
+var forecastLocationSearch = document.getElementById("location-search");
 
 var campgrounds = function () {
     var api = "https://uofa21cors.herokuapp.com/https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=9WCGsbfRuKJ59gX4nTOcctunYzc9NzsK85Skbj5G"
@@ -21,7 +20,6 @@ var campgrounds = function () {
 
 
 
-
 //start of weather dashboard
 var weatherFiveDayForecast = function (latitude, longitude) {
     var weatherApi = "https://api.openweathermap.org/data/2.5/onecall?&lat=" + latitude + "&lon=" + longitude + "&exclude=minutely,hourly&appid=5c71643f7754882962dd3859f2f84f94&units=imperial"
@@ -32,7 +30,7 @@ var weatherFiveDayForecast = function (latitude, longitude) {
         })
         .then(function (data) {
             console.log(data);
-
+            
             for (var i = 0; i < 5; i++) {
                 var dateList = document.getElementById(`date${i + 1}`)
                 dateList.innerHTML = "";
@@ -91,13 +89,12 @@ var weatherFiveDayForecast = function (latitude, longitude) {
                 }
                 document.getElementById(`day${i + 1}`).appendChild(uvi);
             };
-            saveWeatherResults();
         })
 };
 
 var weatherByLocation = function (location) {
     var apiLatLon = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=5c71643f7754882962dd3859f2f84f94"
-    
+    // saveWeatherResults(location);
     fetch(apiLatLon)
         .then(function (response) {
             if (response.ok) {
@@ -112,53 +109,55 @@ var weatherByLocation = function (location) {
         })
 };
 
-
 var parkSearch = function (event) {
     event.preventDefault();
     // console.log(event);
     var location = locationWeatherInput.value.trim();
-    
+   
     if (location) {
         weatherByLocation(location);
         locationWeatherInput.value = "";
-    } 
-    console.log("button clicked");
+    }
+    // console.log("button clicked");
 };
 
 var saveWeatherResults = function () {
-    var savedWeatherLocation = JSON.parse(localStorage.getItem("cities")) || [];
-    savedWeatherLocation.push(locationWeatherInput.value);
-    localStorage.setItem("cities", JSON.stringify(savedWeatherLocation));
-    console.log("this", savedWeatherLocation);
+    var savedWeatherCities = JSON.parse(localStorage.getItem("cities")) || [];
+    savedWeatherCities.push(locationWeatherInput.value);
+    localStorage.setItem("cities", JSON.stringify(savedWeatherCities));
+    console.log("this", savedWeatherCities);
 };
 
-// var getSavedSearchResults = function () {
-//     var savedLocation = JSON.parse(localStorage.getItem("cities")) || [];
-//     for (var i = 0; i < savedLocation.length; i++) {
-//         var citiesButton = document.createElement("button");
-//         citiesButton.textContent = savedLocation[i];
-//         citiesButton.classList.add("row", "mt-2", "savedCity", "btn", "d-grid", "gap-2", "col", "rounded", "mb-2" );
-//         citiesButton.addEventListener("click", function () {
-//         console.log("this is some text", this);
-//         weatherByLocation(this.textContent);
-//         });
-//         savedSearches.append(citiesButton);
-//     }
-// };
+var displaySaveWeatherResults = function () {
+    var savedWeatherCities = JSON.parse(localStorage.getItem("cities")) || [];
+    for (var i = 0; i < savedWeatherCities.length; i++) {
+        var weatherBtnLocation = document.createElement("button");
+        weatherBtnLocation.textContent = savedWeatherCities[i];
+        weatherBtnLocation.classList.add("button");
+        weatherBtnLocation.addEventListener("click", function () {
+            console.log("this is some text", this);
+            forecastLocationSearch.textContent = this.textContent;
+            weatherByLocation(this.textContent);
+        });
+        savedWeatherSearches.append(weatherBtnLocation);
+    };
+};
 
-// var deleteSearches = function () {
-//     console.log("delete button clicked");
-//     localStorage.removeItem("cities");
-//     terms.innerHTML = "";
-// };
+var deleteSearches = function () {
+    console.log("delete button clicked");
+    localStorage.removeItem("cities");
+    savedWeatherSearches.innerHTML = "";
+};
 
-// getSavedSearchResults();
-// searchBtn.addEventListener("click", function () {
-//     weatherByLocation(cityInput.value);
-//     saveSearchResults();
-// });
+displaySaveWeatherResults();
+searchBtn.addEventListener("click", function () {
+    weatherByLocation();
+    // parkSearch();
+    saveWeatherResults();
+});
 
-
+//End of weather dashboard code // 
 
 campgrounds();
- searchBtn.addEventListener("click", parkSearch);
+// searchBtn.addEventListener("click", parkSearch);
+deleteEl.addEventListener("click", deleteSearches);
