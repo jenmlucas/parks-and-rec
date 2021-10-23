@@ -89,6 +89,7 @@ var weatherFiveDayForecast = function (latitude, longitude) {
                 }
                 document.getElementById(`day${i + 1}`).appendChild(uvi);
             };
+           
         })
 };
 
@@ -104,6 +105,7 @@ var weatherByLocation = function (location) {
                     var lon = data.coord.lon;
                     console.log("this", lat, lon);
                     weatherFiveDayForecast(lat, lon);
+                    
                 })
             }
         })
@@ -117,6 +119,7 @@ var parkSearch = function (event) {
     if (location) {
         weatherByLocation(location);
         locationWeatherInput.value = "";
+        
     }
     // console.log("button clicked");
 };
