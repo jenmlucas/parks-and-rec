@@ -19,7 +19,6 @@ var campgrounds = function () {
 
 
 
-
 //start of weather dashboard
 var weatherFiveDayForecast = function (latitude, longitude) {
     var weatherApi = "https://api.openweathermap.org/data/2.5/onecall?&lat=" + latitude + "&lon=" + longitude + "&exclude=minutely,hourly&appid=5c71643f7754882962dd3859f2f84f94&units=imperial"
@@ -30,7 +29,7 @@ var weatherFiveDayForecast = function (latitude, longitude) {
         })
         .then(function (data) {
             console.log(data);
-            
+
             for (var i = 0; i < 5; i++) {
                 var dateList = document.getElementById(`date${i + 1}`)
                 dateList.innerHTML = "";
@@ -89,7 +88,6 @@ var weatherFiveDayForecast = function (latitude, longitude) {
                 }
                 document.getElementById(`day${i + 1}`).appendChild(uvi);
             };
-         
         })
 };
 
@@ -104,24 +102,11 @@ var weatherByLocation = function (location) {
                     var lat = data.coord.lat;
                     var lon = data.coord.lon;
                     console.log("this", lat, lon);
-                    weatherFiveDayForecast(lat, lon);  
+                    weatherFiveDayForecast(lat, lon);
                     forecastLocationSearch.textContent = location;
                 })
             }
         })
-};
-
-var parkSearch = function (event) {
-    event.preventDefault();
-    // console.log(event);
-    var location = locationWeatherInput.value.trim();
-   
-    if (location) {
-        weatherByLocation(location);
-        locationWeatherInput.value = "";
-        
-    }
-    // console.log("button clicked");
 };
 
 var saveWeatherResults = function (locationInput) {
@@ -140,21 +125,23 @@ var displaySaveWeatherResults = function () {
         weatherBtnLocation.addEventListener("click", function () {
             console.log("this is some text", this);
             weatherByLocation(this.textContent);
+         
         });
         savedWeatherSearches.append(weatherBtnLocation);
     };
 };
 
-var updatedSaveWeatherResults= function(latestCity) {
-var weatherBtnLocation = document.createElement("button");
-        weatherBtnLocation.textContent = latestCity;
-        weatherBtnLocation.classList.add("button");
-        weatherBtnLocation.addEventListener("click", function () {
-            console.log("this is some text", this);
-            weatherByLocation(this.textContent);
-        });
-        savedWeatherSearches.append(weatherBtnLocation);
-    };
+var updatedSaveWeatherResults = function (latestCity) {
+    var weatherBtnLocation = document.createElement("button");
+    weatherBtnLocation.textContent = latestCity;
+    weatherBtnLocation.classList.add("button");
+    weatherBtnLocation.addEventListener("click", function () {
+        console.log("this is some text", this);
+        weatherByLocation(this.textContent);
+    
+    });
+    savedWeatherSearches.append(weatherBtnLocation);
+};
 
 var deleteSearches = function () {
     console.log("delete button clicked");
@@ -166,12 +153,27 @@ displaySaveWeatherResults();
 searchBtn.addEventListener("click", function (event) {
     event.preventDefault();
     saveWeatherResults(locationWeatherInput.value);
-    weatherByLocation(locationWeatherInput.value);
-    updatedSaveWeatherResults(locationWeatherInput.value);  
+    updatedSaveWeatherResults(locationWeatherInput.value);
 });
+
+var ipAddress = function () {
+    var apiIpAddress = "http://ip-api.com/json"
+
+    fetch(apiIpAddress)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            weatherByLocation(data.city);
+        })
+};
+
 
 //End of weather dashboard code // 
 
+
+ipAddress();
 campgrounds();
 // searchBtn.addEventListener("click", parkSearch);
 deleteEl.addEventListener("click", deleteSearches);
