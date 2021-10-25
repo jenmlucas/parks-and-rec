@@ -125,7 +125,7 @@ var displaySaveWeatherResults = function () {
         weatherBtnLocation.addEventListener("click", function () {
             console.log("this is some text", this);
             weatherByLocation(this.textContent);
-         
+
         });
         savedWeatherSearches.append(weatherBtnLocation);
     };
@@ -138,7 +138,7 @@ var updatedSaveWeatherResults = function (latestCity) {
     weatherBtnLocation.addEventListener("click", function () {
         console.log("this is some text", this);
         weatherByLocation(this.textContent);
-    
+
     });
     savedWeatherSearches.append(weatherBtnLocation);
 };
@@ -152,8 +152,12 @@ var deleteSearches = function () {
 displaySaveWeatherResults();
 searchBtn.addEventListener("click", function (event) {
     event.preventDefault();
-    saveWeatherResults(locationWeatherInput.value);
-    updatedSaveWeatherResults(locationWeatherInput.value);
+    if (locationWeatherInput.value) {
+        weatherByLocation(locationWeatherInput.value);
+        saveWeatherResults(locationWeatherInput.value);
+        updatedSaveWeatherResults(locationWeatherInput.value);
+        // ipAddressBtn();
+    }
 });
 
 var ipAddress = function () {
@@ -166,9 +170,10 @@ var ipAddress = function () {
         .then(function (data) {
             console.log(data);
             weatherByLocation(data.city);
+            updatedSaveWeatherResults(data.city);
+            // ipAddressBtn();
         })
 };
-
 
 //End of weather dashboard code // 
 
