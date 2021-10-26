@@ -1,21 +1,20 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-
-
 body {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #9E8E74;
 }
 
 header {
-  padding: 120px 35px;
-  background-image: url(../images/roger-erdvig-GPDqaWEsTxU-unsplash.jpg);
-  background-size: cover;
-  background-position: center;
-  border-bottom: 2px solid green;
+    padding: 120px 35px;
+    background-image: url(../images/roger-erdvig-GPDqaWEsTxU-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid green;
 }
 
 header h1 {
@@ -44,19 +43,11 @@ footer {
     text-align: center;
 }
 
-
-
-
-
-
-
-
 /*Search box styles*/
 
 .search-container {
     border: 1px solid black;
     padding: 20px;
-    
 }
 
 .search-result {
@@ -83,27 +74,32 @@ footer {
     border-radius: 20px;
 }
 
-
-
-
 /*forecast Display Starts */
 
-#weather-forecast{
-    color: rgb(15, 145, 32)
+#weather-forecast {
+    color: rgb(1, 41, 7);
+    text-shadow: 0px 0px 5px rgb(73, 70, 70), 0 0 10px rgb(0, 255, 0);
+    font-size: 50px;
 }
-    
-#date1, #date2, #date3, #date4, #date5{
-text-decoration: underline;
+
+#date1, #date2, #date3, #date4, #date5 {
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .dateForecast {
-    margin-left: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
     justify-content: space-between;
-    font-size: 25px;  
+    font-size: 25px;
+    border-radius: 15px 50px;
+    background-color: rgb(197, 214, 197);
+    box-shadow: 20px 20px 10px black;
 }
 
 .icon {
     width: 60%;
+   
 }
 
 .favorable {
@@ -118,11 +114,33 @@ text-decoration: underline;
     background-color: red;
 }
 
-.button{
+.button {
+    border-radius: 12px; 
+    width: 150px;
+    height: 50px;
+    background: rgb(16, 49, 16);
+    transition: width 2s;
     margin-left: 10px;
-    border-radius: 12px;
 }
 
+.button:hover {
+    width: 200px;
+  }
+
 #deleteSearches {
-    background-color: red;
+    margin-left: 850px;
+    width: 180px;
+    height: 35px;
+    background: red;
+    transition: width 1s;
+}
+
+#deleteSearches:hover {
+    width: 200px;
+    
+}
+
+.card-divider {
+    background-color: white;
+    background-image: url(/assets/images/rocks.jpg);
 }
