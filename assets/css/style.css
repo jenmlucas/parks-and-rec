@@ -10,27 +10,46 @@ body {
 }
 
 header {
-    padding: 120px 35px;
     background-image: url(../images/roger-erdvig-GPDqaWEsTxU-unsplash.jpg);
     background-size: cover;
     background-position: center;
     border-bottom: 2px solid green;
 }
 
-header h1 {
-    font-weight: bold;
-    /* color: rgb(15, 145, 32); */
-    color: rgb(1, 41, 7);
-    width: 30%;
+
+header h1{
     text-align: center;
-    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
-    text-shadow: 0px 0px 3px rgb(73, 70, 70);
-    font-size: 50px;
-    background-color: rgba(17, 142, 180, 0.301);
-    border-color: 1px solid green;
-    border-radius: 2em;
-    margin: auto;
-    text-decoration: underline;
+}
+
+.wanderLogo {
+  width: 20%; 
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-right: 90px;
+}
+
+header nav ul, #endNavUl {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    flex-wrap: wrap;  
+}
+
+header nav ul li a, #endNavLi {
+    padding: 10px 10px;
+    font-size: 20px;
+    color: white; 
+    text-align: center;
+}
+
+#endNavLiA {
+    list-style: none;
+    color: white;
+}
+
+#endNavLiA:hover{
+    color:blue;
 }
 
 footer {
@@ -64,8 +83,8 @@ footer {
     /* text-shadow: 0px 0px 3px rgb(73, 70, 70), 0 0 5px rgb(0, 255, 0); */
     color: rgb(1, 41, 7);
     text-shadow: 0px 0px 3px rgb(73, 70, 70);
-    text-decoration: underline;
-}
+    text-decoration: underline; 
+} 
 
 .search-box {
     text-align: center;
@@ -87,10 +106,26 @@ footer {
     background-color: rgb(4, 4, 238);
 }
 
-#search-results {
+#searchTitle {
     text-shadow: 0px 0px 3px rgb(73, 70, 70);
     text-decoration: underline;
     color: rgb(1, 41, 7);
+    text-align: center;
+}
+
+
+/*/* National Parks */
+.natImg {
+    width: 300px;
+    margin-bottom: 40px; 
+    /* margin-left: 20px;  */
+    border-radius: 25%; 
+}
+
+.campText {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 40px;
 }
 
 /*forecast Display Starts */
@@ -158,12 +193,13 @@ footer {
 
 #deleteSearches {
     margin-left: 850px;
+    margin-top: 5px;
     width: 180px;
     height: 35px;
     background-color: #9E8E74;
     border: 2px solid  rgb(16, 49, 16);
     transition: width 1s;
-    margin-top: 5px;
+    margin-top: 5px; 
 }
 
 #deleteSearches:hover {
@@ -171,6 +207,7 @@ footer {
     background: red;
 }
 
-.card-divider{
+.weather-divider{
     background-image: url(../images/rocks.jpg);
 }
+

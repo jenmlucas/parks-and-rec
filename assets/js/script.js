@@ -22,25 +22,28 @@ var campgrounds = function (location) {
             campgroundEl.innerHTML="";
             
             for (let i = 0; i < json.data.length; i++) {
-                console.log(json.data[i].fullName)
+                console.log(json.data[i].fullName);
+                var parentCampground= document.createElement("div");
+                parentCampground.classList.add("cell", "large-4");
                 
                 var campgroundName = document.createElement("p");
                 campgroundName.textContent = json.data[i].fullName;
-
-                campgroundEl.appendChild(campgroundName)
-
+                campgroundName.classList.add("campText");
+                parentCampground.appendChild(campgroundName);
+                
                 var natParkAdd = document.createElement("p");
-                var campGroundAdd = json.data[i].addresses[0]
+                var campGroundAdd = json.data[i].addresses[0];
                 natParkAdd.textContent = campGroundAdd.line1 + " " + campGroundAdd.city + ", " + campGroundAdd.stateCode + " " + campGroundAdd.postalCode;
-                console.log(json.data[i].addresses[0])
-
-                campgroundEl.appendChild(natParkAdd)
+                console.log(json.data[i].addresses[0]);
+                parentCampground.appendChild(natParkAdd);
+               
 
                 var nationalParkImg = document.createElement("img");
                 nationalParkImg.setAttribute("src", json.data[i].images[0].url)
+                nationalParkImg.classList.add("natImg");
+                parentCampground.appendChild(nationalParkImg);
 
-                campgroundEl.appendChild(nationalParkImg);
-
+                campgroundEl.appendChild(parentCampground);
             }
         })
         .catch (function (error) {
