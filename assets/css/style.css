@@ -19,15 +19,18 @@ header {
 
 header h1 {
     font-weight: bold;
-    color: rgb(15, 145, 32);
+    /* color: rgb(15, 145, 32); */
+    color: rgb(1, 41, 7);
     width: 30%;
     text-align: center;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+    text-shadow: 0px 0px 3px rgb(73, 70, 70);
     font-size: 50px;
     background-color: rgba(17, 142, 180, 0.301);
     border-color: 1px solid green;
     border-radius: 2em;
     margin: auto;
+    text-decoration: underline;
 }
 
 footer {
@@ -58,6 +61,10 @@ footer {
 #search-form {
     text-align: center;
     margin: 10px;
+    /* text-shadow: 0px 0px 3px rgb(73, 70, 70), 0 0 5px rgb(0, 255, 0); */
+    color: rgb(1, 41, 7);
+    text-shadow: 0px 0px 3px rgb(73, 70, 70);
+    text-decoration: underline;
 }
 
 .search-box {
@@ -72,14 +79,36 @@ footer {
     width: 30%;
     height: 2rem;
     border-radius: 20px;
+    background-color: rgb(16, 49, 16);
+    color: white;
+}
+
+.search-btn:hover {
+    background-color: rgb(4, 4, 238);
+}
+
+#search-results {
+    text-shadow: 0px 0px 3px rgb(73, 70, 70);
+    text-decoration: underline;
+    color: rgb(1, 41, 7);
 }
 
 /*forecast Display Starts */
 
 #weather-forecast {
+    margin-top: 60px;
+    margin-left: 400px;
+    text-decoration: underline;
+    font-weight: bold;
     color: rgb(1, 41, 7);
-    text-shadow: 0px 0px 5px rgb(73, 70, 70), 0 0 10px rgb(0, 255, 0);
+    width: 60%;
+    text-align: center;
+    text-shadow: 0px 0px 3px rgb(73, 70, 70);
     font-size: 50px;
+    background-color: rgba(17, 142, 180, 0.301);
+    border-color: 1px solid green;
+    border-radius: 2em;
+    /* margin: auto; */
 }
 
 #date1, #date2, #date3, #date4, #date5 {
@@ -88,18 +117,17 @@ footer {
 }
 
 .dateForecast {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     justify-content: space-between;
-    font-size: 25px;
+    font-size: 20px;
     border-radius: 15px 50px;
     background-color: rgb(197, 214, 197);
     box-shadow: 20px 20px 10px black;
 }
 
 .icon {
-    width: 60%;
-   
+    width: 120px;
 }
 
 .favorable {
@@ -117,30 +145,32 @@ footer {
 .button {
     border-radius: 12px; 
     width: 150px;
-    height: 50px;
+    height: 40px;
     background: rgb(16, 49, 16);
-    transition: width 2s;
+    transition: width 1s;
     margin-left: 10px;
 }
 
 .button:hover {
     width: 200px;
+    background-color: rgb(4, 4, 238);
   }
 
 #deleteSearches {
     margin-left: 850px;
     width: 180px;
     height: 35px;
-    background: red;
+    background-color: #9E8E74;
+    border: 2px solid  rgb(16, 49, 16);
     transition: width 1s;
+    margin-top: 5px;
 }
 
 #deleteSearches:hover {
     width: 200px;
-    
+    background: red;
 }
 
-.card-divider {
-    background-color: white;
-    background-image: url(/assets/images/rocks.jpg);
+.card-divider{
+    background-image: url(../images/rocks.jpg);
 }
