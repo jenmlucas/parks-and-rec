@@ -42,7 +42,7 @@
                         <button id="search-btn" class="search-btn" type="search-btn">Search</button>
                     </form>
                     <div class="search-result large-8 cell">
-                        <div style="height:450px;width:1250px;border:1px solid green;overflow:auto;">
+                        <div style="height:450px;overflow:auto;">
                         <h2 id="searchTitle">Search Results</h2>
                         <div id="campgrounds" class="grid-x"></div>
                     </div>
@@ -52,31 +52,32 @@
         </section>
         
         <section>
-            <div>
-                <h2 id="weather-forecast" class="text-center">Weather Forecast: <span id="location-name"></span></h2>
-                <button id="deleteSearches" class="button small"> Delete All Searches </button>
+            <div class="grid-container fluid"> <!---->
+                <h2 id="weather-forecast" class="text-center cell large-12">Weather Forecast: <span id="location-name"></span></h2>
+                <button id="deleteSearches" class="button small cell large-12"> Delete All Searches </button>
                 <div class="card-body">
                     <div id="savedWeatherSearches"></div>
-                    <div class="row card">
+                    <div class="grid-container fluid"> <!---->
                         <div id="weather-container">
-                            <div class="card-divider weather-divider text-center">
-                                <div class="dateForecast card">
+                            <div class="card-divider weather-divider text-center row card grid-x grid-margin-x">
+                                
+                                <div class="dateForecast card cell large-auto">
                                     <div id="date1"></div>
                                     <p id="day1"></p>
                                 </div>
-                                <div class="dateForecast card">
+                                <div class="dateForecast card cell large-auto">
                                     <div id="date2"></div>
                                     <p id="day2"></p>
                                 </div>
-                                <div class="dateForecast card">
+                                <div class="dateForecast card cell large-auto">
                                     <div id="date3"></div>
                                     <p id="day3"></p>
                                 </div>
-                                <div class="dateForecast card">
+                                <div class="dateForecast card cell large-auto">
                                     <div id="date4"></div>
                                     <p id="day4"></p>
                                 </div>
-                                <div class="dateForecast card">
+                                <div class="dateForecast card cell large-auto">
                                     <div id="date5"></div>
                                     <p id="day5"></p>
                                 </div>
