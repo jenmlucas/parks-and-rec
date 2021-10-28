@@ -32,6 +32,7 @@ var campgrounds = function (location) {
                 parentCampground.appendChild(campgroundName);
                 
                 var natParkAdd = document.createElement("p");
+                natParkAdd.classList.add("campAdd")
                 var campGroundAdd = json.data[i].addresses[0];
                 natParkAdd.textContent = campGroundAdd.line1 + " " + campGroundAdd.city + ", " + campGroundAdd.stateCode + " " + campGroundAdd.postalCode;
                 console.log(json.data[i].addresses[0]);

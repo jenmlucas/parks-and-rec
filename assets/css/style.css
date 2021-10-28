@@ -74,7 +74,7 @@ footer {
 
 .search-result {
     text-align: center;
-    border-left: 2px solid rgb(0, 134, 22);
+    border-left: 2px solid darkgreen;
 }
 
 #search-form {
@@ -117,30 +117,36 @@ footer {
 /*/* National Parks */
 .natImg {
     width: 300px;
+    height: 300px;
+    object-fit: cover;
     margin-bottom: 40px; 
     /* margin-left: 20px;  */
     border-radius: 25%; 
 }
 
 .campText {
-    font-size: 20px;
+    font-size: .9vw;
     font-weight: bold;
     margin-top: 40px;
+    text-align: center;
+}
+
+.campAdd {
+    font-size: .7vw;
+    font-weight: bold;
 }
 
 /*forecast Display Starts */
 
 #weather-forecast {
     margin-top: 60px;
-    margin-left: 400px;
     text-decoration: underline;
     font-weight: bold;
     color: rgb(1, 41, 7);
-    width: 60%;
     text-align: center;
     text-shadow: 0px 0px 3px rgb(73, 70, 70);
-    font-size: 50px;
-    background-color: rgba(17, 142, 180, 0.301);
+    font-size: 2vw;
+    background-color: rgb(17 180 37 / 30%);
     border-color: 1px solid green;
     border-radius: 2em;
     /* margin: auto; */
@@ -151,14 +157,20 @@ footer {
     font-weight: bold;
 }
 
+.card-divider {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
 .dateForecast {
     margin-left: 40px;
     margin-right: 40px;
-    justify-content: space-between;
     font-size: 20px;
     border-radius: 15px 50px;
     background-color: rgb(197, 214, 197);
     box-shadow: 20px 20px 10px black;
+    width: auto;
 }
 
 .icon {
@@ -192,9 +204,10 @@ footer {
   }
 
 #deleteSearches {
-    margin-left: 850px;
+    margin-left: 20%;
     margin-top: 5px;
-    width: 180px;
+    width: 60%;
+    justify-content: center;
     height: 35px;
     background-color: #9E8E74;
     border: 2px solid  rgb(16, 49, 16);
@@ -203,11 +216,12 @@ footer {
 }
 
 #deleteSearches:hover {
-    width: 200px;
+    /* width: 25%; */
     background: red;
 }
 
 .weather-divider{
     background-image: url(../images/rocks.jpg);
 }
+
 
