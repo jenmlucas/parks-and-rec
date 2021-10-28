@@ -12,14 +12,24 @@
 </head>
 
 <body>
-
     <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#weather-forecast"> Weather Report </a>
+                </li>
+                <li>
+                    <a href="#parkSearch"> Park Search </a>
+                </li>
+            </ul>
+        </nav>
         <h1>
-            NAME HERE
+            <img class="wanderLogo" src="assets/images/wander3.0.png" alt="title of page logo">
         </h1>
     </header>
 
     <main>
+        <div id="parkSearch"></div>
         <section>
             <div class="grid-container fluid">
                 <!-- State Search Bar and results container -->
@@ -28,29 +38,28 @@
                     <form id="search-form" class="location-checker cell large-4">
                         <h2> Park Search </h2>
                         <p>Find a park near you</p>
-                        <input id="search-input" class="search-box" placeholder="Enter Location" type="text"></br>
+                        <input id="search-input" class="search-box" placeholder="Enter State" type="text"></br>
                         <button id="search-btn" class="search-btn" type="search-btn">Search</button>
                     </form>
-
-                    <div id="campgrounds" class="search-result cell large-8">
-                        <h2>Search Results</h2>
+                    <div class="search-result large-8 cell">
+                        <div style="height:450px;width:1250px;border:1px solid green;overflow:auto;">
+                        <h2 id="searchTitle">Search Results</h2>
+                        <div id="campgrounds" class="grid-x"></div>
+                    </div>
                     </div>
                 </div>
             </div>
         </section>
-
+        
         <section>
             <div>
                 <h2 id="weather-forecast" class="text-center">Weather Forecast: <span id="location-name"></span></h2>
+                <button id="deleteSearches" class="button small"> Delete All Searches </button>
                 <div class="card-body">
-
-                    <button id="deleteSearches" class="button small"> Delete All Searches </button>
-
-                    <div id="savedWeatherSearches">
-                    </div>
+                    <div id="savedWeatherSearches"></div>
                     <div class="row card">
                         <div id="weather-container">
-                            <div class="card-divider text-center">
+                            <div class="card-divider weather-divider text-center">
                                 <div class="dateForecast card">
                                     <div id="date1"></div>
                                     <p id="day1"></p>
@@ -76,8 +85,15 @@
                     </div>
                 </div>
         </section>
-
-
+        <div>
+            <nav>
+                <ul  id="endNav">
+                    <li id="endNavLi">
+                        <a id="endNavLiA" href="#parkSearch"> Park Search </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         <footer>
             ©Copyright 2021, Nathan Nelson & JenMLucas. All Rights Reserved
         </footer>
