@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Parks and Rec</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#weather-forecast"> Weather Report </a>
+                </li>
+                <li>
+                    <a href="#parkSearch"> Park Search </a>
+                </li>
+            </ul>
+        </nav>
+        <h1>
+            <img class="wanderLogo" src="assets/images/wander3.0.png" alt="title of page logo">
+        </h1>
+    </header>
+
+    <main>
+        <div id="parkSearch"></div>
+        <section>
+            <div class="grid-container fluid">
+                <!-- State Search Bar and results container -->
+                <div class="grid-x grid-margin-x">
+                    <!--Search box -->
+                    <form id="search-form" class="location-checker cell large-4">
+                        <h2> Park Search </h2>
+                        <p>Find a park near you</p>
+                        <input id="search-input" class="search-box" placeholder="Enter State" type="text"></br>
+                        <button id="search-btn" class="search-btn" type="search-btn">Search</button>
+                    </form>
+                    <div class="search-result large-8 cell">
+                        <div style="height:450px;overflow:auto;">
+                        <h2 id="searchTitle">Search Results</h2>
+                        <div id="campgrounds" class="grid-x"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <div class="grid-container fluid"> <!---->
+                <h2 id="weather-forecast" class="text-center cell large-12">Weather Forecast: <span id="location-name"></span></h2>
+                <button id="deleteSearches" class="button small cell large-12"> Delete All Searches </button>
+                <div class="card-body">
+                    <div id="savedWeatherSearches"></div>
+                    <div class="grid-container fluid"> <!---->
+                        <div id="weather-container">
+                            <div class="card-divider weather-divider text-center row card grid-x grid-margin-x">
+                                
+                                <div class="dateForecast card cell large-auto">
+                                    <div id="date1"></div>
+                                    <p id="day1"></p>
+                                </div>
+                                <div class="dateForecast card cell large-auto">
+                                    <div id="date2"></div>
+                                    <p id="day2"></p>
+                                </div>
+                                <div class="dateForecast card cell large-auto">
+                                    <div id="date3"></div>
+                                    <p id="day3"></p>
+                                </div>
+                                <div class="dateForecast card cell large-auto">
+                                    <div id="date4"></div>
+                                    <p id="day4"></p>
+                                </div>
+                                <div class="dateForecast card cell large-auto">
+                                    <div id="date5"></div>
+                                    <p id="day5"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <div>
+            <nav>
+                <ul  id="endNav">
+                    <li id="endNavLi">
+                        <a id="endNavLiA" href="#parkSearch"> Park Search </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <footer>
+            ©Copyright 2021, Nathan Nelson & JenMLucas. All Rights Reserved
+        </footer>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
+        integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
