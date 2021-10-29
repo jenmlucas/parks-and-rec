@@ -125,14 +125,14 @@ footer {
 }
 
 .campText {
-    font-size: .9vw;
+    font-size: 1vw;
     font-weight: bold;
     margin-top: 40px;
     text-align: center;
 }
 
 .campAdd {
-    font-size: .7vw;
+    font-size: .75vw;
     font-weight: bold;
 }
 
@@ -224,4 +224,22 @@ footer {
     background-image: url(../images/rocks.jpg);
 }
 
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 1030px) {
+
+    .search-result {
+        border-left: none;
+    }
+
+    .campAdd {
+        font-size: 12px;
+
+    }
+
+    .campText {
+        font-size: 15px;
+
+    }
+}
 
