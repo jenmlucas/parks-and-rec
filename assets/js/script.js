@@ -198,7 +198,7 @@ var weatherFiveDayForecast = function (latitude, longitude) {
     });
 
     var ipAddress = function () {
-        var apiIpAddress = "http://ip-api.com/json"
+        var apiIpAddress = "https://uofa21cors.herokuapp.com/http://ip-api.com/json"
 
         fetch(apiIpAddress)
             .then(function (response) {
